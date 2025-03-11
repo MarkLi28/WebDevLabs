@@ -1,0 +1,39 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    padding: 5px;
+    margin: 5px;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+header{
+    color:blueviolet
+}
+
+#webname {
+    background-color:azure;
+}
+
+nav a{
+    text-decoration: none;
+    color:cornflowerblue;
+    margin-right: 15px;
+}
+
+th {
+    padding: 12px;
+    background-color:darkgray;
+    color:darkslategray;
+    width: fit-content;
+}
+
+tbody tr:nth-child(even){
+    background-color: lightgray;
+}
+
+form * {
+    display: block;
+    margin: auto;
+    text-align:center;
+}
