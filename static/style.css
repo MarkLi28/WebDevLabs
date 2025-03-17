@@ -37,3 +37,14 @@ form * {
     margin: auto;
     text-align:center;
 }
+
+button {
+    background-color:lightblue;
+    color:darkslateblue;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

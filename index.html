@@ -13,8 +13,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="./static/script.js" defer></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
-<body>
+<body onload="addYear()">
     <header>
         <h1 id="webname">Mark Li</h1>
         <nav>
@@ -28,11 +30,14 @@
     <div class="main">
         <h2 id = "greeting"> my name is Mark</h2>
         <img src="static/profile.jpeg" alt="My Profile Picture" width="200">
-        <p id="intro">Welcome to my personal website. Here you can learn about my professional experience, interests, and how to contact me.</p>
+        <p id="introShort">Welcome to my personal website. Here you can learn about my professional experience, interests, and how to contact me.</p>
+        <p id="introLong" style="display: none;">Welcome to my personal website. Here you can learn about my professional experience, interests, and how to contact me. If you chare any of my interests, feel free to connect! </p>
+        <button id="readMore" onclick="showLong()">Read More</button>
+        <button id="readLess" onclick="showShort()" style="display: none;">Read Less</button>
     </div>
 
     <footer>
-        <p>&copy; 2025 designed and coded by Mark Li</p>
+        <p id="copyYear">designed and coded by Mark Li &copy;</p>
     </footer>
 </body>
 </html>

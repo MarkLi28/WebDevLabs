@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="../static/script.js" defer></script>
 </head>
-<body>
+<body onload="addYear()">
     <header>
         <h1 id="webname">Your Name</h1>
         <nav>
@@ -26,7 +26,8 @@
 
     <div class="main">
         <h2>Things I love to do for fun</h2>
-        <ul>
+        <button id = "showButton" onclick="showList()">Click to see... </button>
+        <ul id="funList" style="display: none;">
             <li>Playing sports</li>
             <li>Traveling</li>
             <li>Sleeping</li>
@@ -35,7 +36,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+        <p id="copyYear">designed and coded by Mark Li &copy;</p>
     </footer>
 </body>
 </html>
