@@ -51,20 +51,22 @@ function greetingFunc(){
     }
 }
 
-greetingFunc();
+if (window.location.href.includes("index.html")) {
+    greetingFunc();
+}
 
 function addYear(){
     let newYear = new Date().getFullYear();
     document.getElementById("copyYear").innerHTML += newYear;
 }
 
-function showList(){
-    let list = document.getElementById("funList");
-    let button = document.getElementById("showButton");
+//function showList(){
+    //let list = document.getElementById("funList");
+    //let button = document.getElementById("showButton");
 
-    list.style.display = "block";
-    button.style.display = "none";
-}
+    //list.style.display = "block";
+    //button.style.display = "none";
+//}
 
 $(document).ready(function(){
     $("#readMore").click(function(){
@@ -82,37 +84,52 @@ $(document).ready(function(){
     });
 });
 
-document.getElementById("contactForm").addEventListener("submit", function(event){
-    let isValid = true;
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let comment = document.getElementById("comment").value;
+document.addEventListener("DOMContentLoaded", function(){
+    if (document.getElementById("contactForm")){
+        document.getElementById("contactForm").addEventListener("submit", function(event){
+            let isValid = true;
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let comment = document.getElementById("comment").value;
 
-    let nameError = document.getElementById("nameError");
-    let emailError = document.getElementById("emailError");
-    let commentError = document.getElementById("commentError");
+            let nameError = document.getElementById("nameError");
+            let emailError = document.getElementById("emailError");
+            let commentError = document.getElementById("commentError");
     
-    nameError.innerText="";
-    emailError.innerText="";
-    commentError.innerText="";
+            nameError.innerText="";
+            emailError.innerText="";
+            commentError.innerText="";
 
-    if (!name.checkValidity()){
-        nameError.innerText = "Please enter your name.";
-        isValid = false;
-    }
+            if (!name.checkValidity()){
+                nameError.innerText = "Please enter your name.";
+                isValid = false;
+            }
 
-    else if (!email.checkValidity()){
-        emailError.innerText = "Please enter a valid email address.";
-        isValid = false;
-    }
+            else if (!email.checkValidity()){
+                emailError.innerText = "Please enter a valid email address.";
+                isValid = false;
+            }
 
-    else if (!comment.checkValidity()){
-        commentError.innerText = "Please enter your comment.";
-        isValid = false;
-    }   
+            else if (!comment.checkValidity()){
+                commentError.innerText = "Please enter your comment.";
+                isValid = false;
+            }   
 
-    if (!isValid){
-        event.preventDefault();
+            if (!isValid){
+                event.preventDefault();
+            }
+        });
     }
 });
 
+function getAdvice(){
+    fetch('https://api.adviceslip.com/advice')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("adviceText").innerText = data.slip.advice;
+        })
+        .catch(error => {
+            document.getElementById("adviceText").innerText = "Sorry, something went wrong. Please try again later.";
+            console.error('Error fetching advice:', error);
+        });
+}

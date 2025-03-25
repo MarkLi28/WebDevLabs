@@ -47,4 +47,46 @@ button {
     border-radius: 5px;
     cursor: pointer;
   }
-  
+
+  .funIMG {
+    border-radius: 100%;
+}
+
+.container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.mapContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.mapContainer h2 {
+    text-align: center;
+}
+
+.mapWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.contactForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.contactForm h2 {
+    text-align: center;
+}
